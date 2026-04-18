@@ -21,6 +21,11 @@ services:
       - prod
     mem_limit: 512m
     cpus: "0.50"
+    deploy:
+      resources:
+        reservations:
+          memory: 256m
+          cpus: "0.25"
 
   db:
     image: postgres:16
@@ -43,6 +48,11 @@ services:
       start_period: 10s
     mem_limit: 512m
     cpus: "0.50"
+    deploy:
+      resources:
+        reservations:
+          memory: 256m
+          cpus: "0.25"
 
 networks:
   internal:
